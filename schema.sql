@@ -12,7 +12,7 @@ CREATE TABLE restaurants (
 CREATE TABLE items (
   id int(16) AUTO_INCREMENT,
   name VARCHAR(50),
-  picture VARCHAR(50),
+  picture VARCHAR(100),
   restaurant_id int(16),
   PRIMARY KEY (id),
   FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
@@ -35,6 +35,6 @@ CREATE TABLE reviews (
 
 
 /*
-  mysql -u root < server/schema.sql
+  mysql -u root < schema.sql
 */
 

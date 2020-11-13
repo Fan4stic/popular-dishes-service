@@ -5,14 +5,22 @@ const faker = require('faker');
 
 /////////////////////////////////////////////////////////
 
-const start = async (table, data) => {
+const addDataToTable = async (table, data) => {
   try {
     const result = await Api.insert(table, data);
     console.log(result);
   } catch (err) {
     console.log(err);
   }
-}
+};
+
+/////////////////////////////////////////////////////////
+
+// const generateEntries = function(N, table, data) {
+//   for (let index = 0; index < N; index++) {
+//     start(table, data)
+//   }
+// };
 
 /////////////////////////////////////////////////////////
 
@@ -24,23 +32,23 @@ const randomDataRest = {
   name: faker.lorem.word()
 };
 
-start('restaurants', dataRest);
+addDataToTable('restaurants', dataRest);
 
 /////////////////////////////////////////////////////////
 
 const dataItem = {
   name: 'burrito',
-  picture: 'http://image.jpeg',
-  restaurant_id: 6
+  picture: 'https://hackreactorpics.s3-us-west-1.amazonaws.com/tacos.jpg',
+  restaurant_id: 1
 };
 
 const randomDataItem = {
   name: faker.lorem.word(),
-  picture: 'http://image.jpeg',
+  picture: 'https://hackreactorpics.s3-us-west-1.amazonaws.com/tacos.jpg',
   restaurant_id: Math.floor(Math.random() * 2 + 6)
 };
 
-start('items', dataItem);
+addDataToTable('items', dataItem);
 
 /////////////////////////////////////////////////////////
 
@@ -53,8 +61,8 @@ const dataReviews = {
   rating: 5,
   date: currentDate,
   review: 'food was good',
-  restaurant_id: 6,
-  item_id: 3
+  restaurant_id: 1,
+  item_id: 1
 };
 
 const randomDataReviews = {
@@ -68,7 +76,7 @@ const randomDataReviews = {
   item_id: 3
 };
 
-start('reviews', dataReviews);
+addDataToTable('reviews', dataReviews);
 
 /////////////////////////////////////////////////////////
 
