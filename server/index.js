@@ -8,10 +8,11 @@ const app = express();
 app.use(express.static(__dirname + '/../client/dist'));
 
 // Send 10 popular items for a given restaurant id with their corresponding reviews
-app.get('/api/restaurants/popular-items/:id', async (req, res) => {
+app.get('/api/restaurants/:id/popular-items', async (req, res) => {
   try {
     // Get restaurant Id
-    const restaurantId = req.url.slice(31);
+    //const restaurantId = req.url.slice(31);
+    const restaurantId = req.params.id;
     // Define big query
     const bigQuery = `
     SET SESSION group_concat_max_len = 100000;
