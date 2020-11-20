@@ -8,39 +8,39 @@ const sampleURL7 = 'https://lolcow.farm/ot/thumb/1531480777972.jpg';
 
 const sampleDishes = [
   {
-    image: sampleURL1,
+    picture: sampleURL1,
     name: 'Mongolian Beef',
-    reviews: 6
+    reviews: new Array(6)
   },
   {
-    image: sampleURL2,
+    picture: sampleURL2,
     name: 'Steak Tacos',
-    reviews: 23
+    reviews: new Array(23)
   },
   {
-    image: sampleURL3,
+    picture: sampleURL3,
     name: 'Cheese Pizza',
-    reviews: 11
+    reviews: new Array(1)
   },
   {
-    image: sampleURL4,
+    picture: sampleURL4,
     name: 'Chicken Parm',
-    reviews: 17
+    reviews: new Array(17)
   },
   {
-    image: sampleURL5,
+    picture: sampleURL5,
     name: 'Filet Mignon',
-    reviews: 41
+    reviews: new Array(41)
   },
   {
-    image: sampleURL6,
+    picture: sampleURL6,
     name: 'Foie Gras',
-    reviews: 37
+    reviews: new Array(37)
   },
   {
-    image: sampleURL7,
+    picture: sampleURL7,
     name: 'Garlic Bread',
-    reviews: 69
+    reviews: new Array(69)
   }
 ];
 

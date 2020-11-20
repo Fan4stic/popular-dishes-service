@@ -11,6 +11,7 @@ const nameStyle = {
   "text-overflow": "ellipsis",
   "margin-bottom": 5,
   "font-weight": "700",
+  "font-size": "14px",
   color: "#2b273c",
   "font-family": "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif"
 };
@@ -23,9 +24,9 @@ const reviewsStyle = {
   "font-family": "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif"
 };
 
-const CardContent = ({ image, name, reviews }) => {
+const CardContent = ({ image, name, reviews, dish, changeDish }) => {
   return (
-    <div>
+    <div onClick={() => {console.log(dish); changeDish(dish);}}>
       <img src={image} style={imgStyle}></img>
       <div style={{"padding-left": 16, "padding-right": 16}}>
         <p style={nameStyle}>{name}</p>

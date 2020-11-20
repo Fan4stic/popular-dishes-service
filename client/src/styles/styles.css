@@ -1,3 +1,16 @@
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
+.first {
+  margin-right: 7px;
+}
+
+.last {
+  margin-left: 7px;
+}
+
+.middle {
+  margin-left: 7px;
+  margin-right: 7px;
+}

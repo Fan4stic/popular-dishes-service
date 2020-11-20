@@ -5,11 +5,15 @@ class Api {
     this.db = db;
   }
 
-  getAll(table, callback) {
-    this.db.customQuery(`SELECT * FROM ${table}`);
+  getAll(table) {
+    return this.db.customQuery(`SELECT * FROM ${table}`);
   }
 
-  insert(table, data, callback) {
+  getById(table, id) {
+    return this.db.customQuery(`SELECT * FROM ${table} where id=${id}`);
+  }
+
+  insert(table, data) {
     switch(table) {
       case 'restaurants':
         return this.db.customQuery('INSERT INTO restaurants(name) values(?)', [data.name]);
@@ -17,8 +21,12 @@ class Api {
       case 'items':
         return this.db.customQuery('INSERT INTO items(name, picture, restaurant_id) values(?, ?, ?)', [data.name, data.picture, data.restaurant_id]);
         break;
+      case 'users':
+        console.log('here');
+        return this.db.customQuery('INSERT INTO users(name, picture, friends, ratings) values(?, ?, ?, ?)', [data.name, data.picture, data.friends, data.ratings]);
+        break;
       case 'reviews':
-        return this.db.customQuery('INSERT INTO reviews(username, user_friends, user_ratings, rating, date, review, restaurant_id, item_id) values(?, ?, ?, ?, ?, ?, ?, ?)', [data.username, data.user_friends, data.user_ratings, data.rating, data.date, data.review, data.restaurant_id, data.item_id]);
+        return this.db.customQuery('INSERT INTO reviews(rating, date, review, user_id, item_id) values(?, ?, ?, ?, ?)', [data.rating, data.date, data.review, data.user_id, data.item_id]);
         break;
     }
   }
