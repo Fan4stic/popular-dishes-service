@@ -29,7 +29,7 @@ const generateEntries = function(N, table) {
       case 'users':
         data = {
           name: faker.name.findName(),
-          picture: faker.image.avatar(),
+          picture: 'https://i.pravatar.cc/100',
           friends: Math.floor(Math.random() * 70),
           ratings: Math.floor(Math.random() * 70)
         };

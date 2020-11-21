@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS YELP;
-CREATE DATABASE YELP;
-USE YELP;
+DROP DATABASE IF EXISTS yelp_popular_dishes;
+CREATE DATABASE yelp_popular_dishes;
+USE yelp_popular_dishes;
 
 
 CREATE TABLE restaurants (

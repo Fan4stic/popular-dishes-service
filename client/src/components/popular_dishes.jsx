@@ -37,7 +37,7 @@ class PopularDishes extends React.Component {
   }
 
   getPopularFoods() {
-    axios.get('/api/restaurants/popular-items/10')
+    axios.get('/api/restaurants/10/popular-items/')
       .then((response) => {
         console.log(response.data);
         this.setState({popularFoods: response.data});
