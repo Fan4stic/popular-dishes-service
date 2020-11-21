@@ -5,7 +5,7 @@ const starsStyle = {
   width: 108
 };
 
-const subHeaderStyle = {display: 'grid', gridTemplateColumns: '115px auto', height: 30, border: '1px solid purple', fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif', fontWeight: 400, fontSize: 14, color: '#757280'};
+const subHeaderStyle = {display: 'grid', gridTemplateColumns: '115px auto', height: 30, fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif', fontWeight: 400, fontSize: 14, color: '#757280'};
 
 const SubHeader = ({ data }) => {
 

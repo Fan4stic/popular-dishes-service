@@ -15,15 +15,15 @@ const avatarStyle = {
   overflow: 'hidden'
 };
 
-const nameStyle = {border: '1px solid green', fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif", fontWeight: 700, fontSize: 16, color: '#2b273c'};
+const nameStyle = {fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif", fontWeight: 700, fontSize: 16, color: '#2b273c'};
 
-const userStyle = {display: 'flex', flexDirection: 'row', border: '1px solid red', fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif", fontWeight: 600, fontSize: 14, color: '#757280'};
+const userStyle = {display: 'flex', flexDirection: 'row', fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif", fontWeight: 600, fontSize: 14, color: '#757280'};
 
 const UserInfo = ({ data }) => {
   return (
     <div style={{display: 'grid', gridTemplateColumns: '35px auto', minWidth: 200, minHeight: 50}}>
       <img id='avatar' style={avatarStyle} src={data.avatar}/>
-      <div id='userInfo' style={{marginLeft: 3, display: 'grid', gridTemplateRows: '25px 25px', border: '1px solid black'}}>
+      <div id='userInfo' style={{marginLeft: 3, display: 'grid', gridTemplateRows: '25px 25px'}}>
         <div style={nameStyle}>
           {nameFormat(data.name)}
         </div>

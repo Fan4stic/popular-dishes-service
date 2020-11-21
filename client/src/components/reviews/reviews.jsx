@@ -8,7 +8,7 @@ const Reviews = ({ reviews }) => {
         reviews &&
         reviews.map((review, index) => {
           return (
-            <div style={{marginTop: 20, marginBottom: 20}}>
+            <div style={{marginTop: 20, marginBottom: 20, overflow: 'scroll'}}>
               <Review key={index} data={review}/>
             </div>
           )

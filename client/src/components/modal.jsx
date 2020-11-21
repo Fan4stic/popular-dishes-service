@@ -56,7 +56,7 @@ const Modal = ({ shown, toggle, data, dish }) => {
           <div style={{backgroundColor: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <img style={{objectFit: 'contain', width: '100%'}} src={dish.picture}/>
           </div>
-          <div style={{marginLeft: 20, marginRight: 20, width: 350}}>
+          <div style={{marginLeft: 20, marginRight: 20, width: 350, overflow: 'scroll'}}>
             <p style={titleStyle}>{sampleDishes[0].name}</p>
             <Reviews reviews={sampleReviews}/>
           </div>
