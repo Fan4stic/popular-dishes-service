@@ -24,7 +24,7 @@ const leftButtonStyle = {
 const rightButtonStyle = {
   "position": "absolute",
   "top": "75px",
-  "left": "715px"
+  "left": "714px"
 };
 
 const Carousel = ({ dishes, changeDish }) => {

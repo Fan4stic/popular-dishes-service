@@ -2,28 +2,32 @@ import React, { useState } from 'react';
 const arrow = require('../styles/arrow.js');
 
 const hoverCSS = {
-  "background-color": "white",
-  "height": 34,
-  "width": 34,
-  "border": "1px solid #e6e6e6",
-  "border-radius": "20px",
-  "margin": "0px 10px"
+  backgroundColor: "white",
+  height: 34,
+  width: 34,
+  border: "1px solid #e6e6e6",
+  borderRadius: "20px",
+  margin: "0px 10px",
+  cursor: 'pointer',
+  zIndex: 500
 };
 
 const noHoverCSS = {
-  "background-color": "white",
-  "height": 34,
-  "width": 34,
-  "box-shadow": "0 2px 6px 0 rgba(0,0,0,0.15)",
-  "border": "1px solid #e6e6e6",
-  "border-radius": "20px",
-  "margin": "0px 10px"
+  backgroundColor: "white",
+  height: 34,
+  width: 34,
+  boxShadow: "0 2px 6px 0 rgba(0,0,0,0.15)",
+  border: "1px solid #e6e6e6",
+  borderRadius: "20px",
+  margin: "0px 10px",
+  cursor: 'pointer',
+  zIndex: 500
 };
 
 const imageStyle = {
-  "position": "relative",
-  "left": "8px",
-  "top": "8px"
+  position: "relative",
+  left: "8px",
+  top: "8px"
 };
 
 const ScrollButton = ({ elementId, direction, ammount, style }) => {

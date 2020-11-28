@@ -19,10 +19,9 @@ class Api {
         return this.db.customQuery('INSERT INTO restaurants(name) values(?)', [data.name]);
         break;
       case 'items':
-        return this.db.customQuery('INSERT INTO items(name, picture, restaurant_id) values(?, ?, ?)', [data.name, data.picture, data.restaurant_id]);
+        return this.db.customQuery('INSERT INTO items(name, picture, price, restaurant_id) values(?, ?, ?, ?)', [data.name, data.picture, data.price, data.restaurant_id]);
         break;
       case 'users':
-        console.log('here');
         return this.db.customQuery('INSERT INTO users(name, picture, friends, ratings) values(?, ?, ?, ?)', [data.name, data.picture, data.friends, data.ratings]);
         break;
       case 'reviews':

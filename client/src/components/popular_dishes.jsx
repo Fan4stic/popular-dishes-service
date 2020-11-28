@@ -20,7 +20,7 @@ class PopularDishes extends React.Component {
     super(props);
     this.state = {
       modalShown: false,
-      popularFoods: {},
+      popularFoods: sampleDishes,
       currentDish: {picture: sampleDishes[0].picture, name: 'stuff', reviews: []}
     }
     this.toggleModal = this.toggleModal.bind(this);
@@ -32,13 +32,13 @@ class PopularDishes extends React.Component {
   }
 
   setCurrentDish(dish) {
-    this.setState({currentDish: dish, modalShown: true})
-    console.log(this.state.currentDish);
+    this.setState({currentDish: dish, modalShown: true});
   }
 
   getPopularFoods() {
     axios.get('/api/restaurants/10/popular-items/')
       .then((response) => {
+        //console.log(window.location);
         console.log(response.data);
         this.setState({popularFoods: response.data});
       })
@@ -55,7 +55,7 @@ class PopularDishes extends React.Component {
     return(
       <div>
         <div style={titleStyle}>Popular Dishes</div>
-        <Carousel dishes={sampleDishes} changeDish={this.setCurrentDish}/>
+        <Carousel dishes={this.state.popularFoods} changeDish={this.setCurrentDish}/>
         <Modal dish={this.state.currentDish} shown={this.state.modalShown} toggle={this.toggleModal}/>
       </div>
     )

@@ -3,29 +3,33 @@ import Reviews from './reviews/reviews.jsx';
 const sampleDishes = require('../sample_data/sample_dishes.js');
 const sampleReviews = require('../sample_data/sample_reviews.js');
 
-const modalStyle = {
+const menuButtonURL = 'https://hackreactorpics.s3-us-west-1.amazonaws.com/Screen+Shot+2020-11-27+at+6.34.17+PM.png';
+
+const modalBackgroundStyle = {
   position: 'absolute',
   top: 0,
   left: 0,
   zIndex: 998,
   backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  height: '90%',
-  width: '90%',
+  height: '100vh',
+  width: '100vw',
+  display: 'flex',
+  alignItems: 'stretch',
+  boxSizing: 'border-box',
   paddingLeft: 80,
   paddingRight: 80,
   paddingTop: 40,
   paddingBottom: 40
 };
 
-const innerDivStyle = {
+const modalStyle = {
   backgroundColor: 'white',
   display: 'grid',
-  gridTemplateColumns: 'auto 390px',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  borderRadius: 10,
+  gridTemplateColumns: 'minmax(0, 1fr) 390px',
+  gridTemplateRows: '100%',
+  width: '100%',
   height: '100%',
-  width: '90%',
+  borderRadius: 4,
   overflow: 'hidden'
 };
 
@@ -37,7 +41,7 @@ const titleStyle = {
 };
 
 const closeStyle = {
-  right: 135,
+  right: 80,
   top: 0,
   position: 'absolute',
   height: 20,
@@ -46,21 +50,26 @@ const closeStyle = {
   fontSize: 35
 };
 
+const menuButtonStyle = {
+  width: 360,
+  height: 'auto'
+};
+
 const Modal = ({ shown, toggle, data, dish }) => {
-  console.log(dish);
   return (
     shown && (
-      <div id="modal" style={modalStyle}>
-        <span style={closeStyle} onClick={() => {toggle()}}>&times;</span>
-        <div style={innerDivStyle}>
-          <div style={{backgroundColor: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <img style={{objectFit: 'contain', width: '100%'}} src={dish.picture}/>
+      <div id="modal" style={modalBackgroundStyle}>
+          <span style={closeStyle} onClick={() => {toggle()}}>&times;</span>
+          <div style={modalStyle}>
+            <div style={{backgroundColor: 'black', display: 'flex'}}>
+              <img style={{objectFit: 'contain', flexGrow: 1, minWidth: 0}} src={dish.picture}/>
+            </div>
+            <div style={{marginLeft: 20, marginRight: 20, width: 350, height: '100%'}}>
+              <p style={titleStyle}>{dish.name}</p>
+              <Reviews reviews={dish.reviews}/>
+              <img style={menuButtonStyle} src={menuButtonURL}></img>
+            </div>
           </div>
-          <div style={{marginLeft: 20, marginRight: 20, width: 350, overflow: 'scroll'}}>
-            <p style={titleStyle}>{sampleDishes[0].name}</p>
-            <Reviews reviews={sampleReviews}/>
-          </div>
-        </div>
       </div>
     )
   );

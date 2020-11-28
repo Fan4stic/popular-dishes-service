@@ -3,12 +3,12 @@ import Review from './review.jsx';
 
 const Reviews = ({ reviews }) => {
   return (
-    <div>
+    <div style={{overflow: 'auto', height: '75%'}}>
       {
         reviews &&
         reviews.map((review, index) => {
           return (
-            <div style={{marginTop: 20, marginBottom: 20, overflow: 'scroll'}}>
+            <div style={{marginTop: 20, marginBottom: 20}}>
               <Review key={index} data={review}/>
             </div>
           )

@@ -12,7 +12,8 @@ CREATE TABLE restaurants (
 CREATE TABLE items (
   id int(16) AUTO_INCREMENT,
   name VARCHAR(50),
-  picture VARCHAR(100),
+  picture VARCHAR(300),
+  price int,
   restaurant_id int(16),
   PRIMARY KEY (id),
   FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
