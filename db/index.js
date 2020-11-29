@@ -3,6 +3,7 @@ const mysql = require('mysql');
 let db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
+  password: 'password',
   database: 'yelp_popular_dishes',
   multipleStatements: true
 });
