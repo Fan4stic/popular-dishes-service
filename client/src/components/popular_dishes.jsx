@@ -20,8 +20,8 @@ class PopularDishes extends React.Component {
     super(props);
     this.state = {
       modalShown: false,
-      popularFoods: sampleDishes,
-      currentDish: {picture: sampleDishes[0].picture, name: 'stuff', reviews: []}
+      dishes: [],
+      currentDish: {picture: '', name: '', reviews: []}
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.setCurrentDish = this.setCurrentDish.bind(this);
@@ -40,7 +40,7 @@ class PopularDishes extends React.Component {
       .then((response) => {
         //console.log(window.location);
         console.log(response.data);
-        this.setState({popularFoods: response.data});
+        this.setState({dishes: response.data});
       })
       .catch((error) => {
         console.log(error);
@@ -52,13 +52,18 @@ class PopularDishes extends React.Component {
   }
 
   render() {
-    return(
-      <div>
-        <div style={titleStyle}>Popular Dishes</div>
-        <Carousel dishes={this.state.popularFoods} changeDish={this.setCurrentDish}/>
-        <Modal dish={this.state.currentDish} shown={this.state.modalShown} toggle={this.toggleModal}/>
-      </div>
-    )
+    if (this.state.dishes.length) {
+      return (
+        <div>
+          <div style={titleStyle}>Popular Dishes</div>
+          <Carousel dishes={this.state.dishes} changeDish={this.setCurrentDish}/>
+          <Modal dish={this.state.currentDish} shown={this.state.modalShown} toggle={this.toggleModal}/>
+        </div>
+      );
+    }
+    return (
+      <div></div>
+    );
   }
 };
 
