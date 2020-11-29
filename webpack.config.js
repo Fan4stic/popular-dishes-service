@@ -6,7 +6,7 @@ const APP_DIR = path.resolve(__dirname, 'client/src');
 
 var config = {
   entry: APP_DIR + '/index.jsx',
-  devtool: 'inline-source-map',
+  //devtool: 'inline-source-map',
   module: {
     rules: [
       {

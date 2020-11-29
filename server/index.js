@@ -1,9 +1,13 @@
 const express = require('express');
+const compression = require('compression');
 const Api = require('../db/api');
 const db = require('../db/index');
+const path = require('path');
 
 const app = express();
 
+
+app.use(compression());
 // Serve up index.html
 app.use(express.static(__dirname + '/../client/dist'));
 
