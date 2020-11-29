@@ -9,7 +9,8 @@ const hoverCSS = {
   borderRadius: "20px",
   margin: "0px 10px",
   cursor: 'pointer',
-  zIndex: 500
+  zIndex: 500,
+  marginRight: 0
 };
 
 const noHoverCSS = {
@@ -21,7 +22,8 @@ const noHoverCSS = {
   borderRadius: "20px",
   margin: "0px 10px",
   cursor: 'pointer',
-  zIndex: 500
+  zIndex: 500,
+  marginRight: 0
 };
 
 const imageStyle = {

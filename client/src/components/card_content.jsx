@@ -26,9 +26,9 @@ const reviewsStyle = {
 
 const priceStyle = {
   textAlign: 'right',
-  position: 'absolute',
-  right: 5,
-  bottom: 60,
+  position: 'relative',
+  left: 130,
+  bottom: 90,
   padding: '3px 6px',
   borderRadius: 4,
   backgroundColor: 'rgba(51,51,51,.75)',

@@ -8,23 +8,23 @@ const arrow = require('../styles/arrow.js');
 
 
 const carouselStyle = {
-  "display": "flex",
-  "flex-direction": "row",
-  "height": 200,
-  "width": 725,
-  "overflow": "scroll"
+  display: "flex",
+  flexDirection: "row",
+  height: 200,
+  width: 725,
+  overflow: "scroll"
 };
 
 const leftButtonStyle = {
-  "position": "absolute",
-  "top": "75px",
-  "left": "-5px"
+  position: "relative",
+  bottom: 125,
+  left: -25
 };
 
 const rightButtonStyle = {
-  "position": "absolute",
-  "top": "75px",
-  "left": "714px"
+  position: "relative",
+  bottom: 160,
+  left: 695
 };
 
 const Carousel = ({ dishes, changeDish }) => {
@@ -41,8 +41,6 @@ const Carousel = ({ dishes, changeDish }) => {
 
   return (
     <div style={{"position": "relative", padding: "0 20px"}}>
-      <ScrollButton style={leftButtonStyle} elementId={"carousel"} direction={'left'} ammount={750}/>
-      <ScrollButton style={rightButtonStyle} elementId={"carousel"} direction={'right'} ammount={750}/>
       <div className="carousel" id="carousel" style={carouselStyle}>
         {dishes && dishes.map((dish, index) => {
           return (
@@ -58,6 +56,8 @@ const Carousel = ({ dishes, changeDish }) => {
           );
         })}
       </div>
+      <ScrollButton style={leftButtonStyle} elementId={"carousel"} direction={'left'} ammount={750}/>
+      <ScrollButton style={rightButtonStyle} elementId={"carousel"} direction={'right'} ammount={750}/>
     </div>
   );
 };
