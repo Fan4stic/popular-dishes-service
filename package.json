@@ -12,7 +12,8 @@
     "test": "jest",
     "seed": "node seed.js",
     "server": "nodemon server/index.js",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "webpack-prod": "webpack"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
@@ -20,6 +21,7 @@
     "@babel/preset-react": "^7.12.5",
     "axios": "^0.21.0",
     "babel-loader": "^8.2.1",
+    "compression": "^1.7.4",
     "css-loader": "^5.0.1",
     "express": "^4.17.1",
     "faker": "^5.1.0",
