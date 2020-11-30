@@ -31,7 +31,7 @@ CREATE TABLE users (
 CREATE TABLE reviews (
   id int(16) AUTO_INCREMENT,
   rating int(16),
-  date DATE,
+  date VARCHAR(10),
   review VARCHAR(200),
   user_id int(16),
   item_id int(16),
