@@ -1,9 +1,11 @@
 const Api = require('./db/api');
 const faker = require('faker');
+const samplePics = require('./sample_pics');
+const dateFormatter = require('./tools/date_formatter');
 
-const randInt = (n) => Math.floor(Math.random() * n);
-const photoUrl = (n) => {
-  return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
+const randInt = (n, offset = 0) => Math.floor(Math.random() * n) + offset;
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 const addDataToTable = async (table, data) => {
@@ -26,27 +28,27 @@ const generateEntries = async function(N, table) {
         break;
       case 'items':
         data = {
-          name: faker.lorem.word(),
-          picture: photoUrl(15),
-          price: (Math.floor(Math.random() * 20) + 5),
-          restaurant_id: Math.floor(Math.random() * 51)
+          name: capitalizeFirstLetter(faker.lorem.word()),
+          picture: samplePics[randInt(samplePics.length)],
+          price: randInt(20, 5),
+          restaurant_id: randInt(51)
         };
         break;
       case 'users':
         data = {
           name: faker.name.findName(),
           picture: 'https://i.pravatar.cc/100',
-          friends: Math.floor(Math.random() * 70),
-          ratings: Math.floor(Math.random() * 70)
+          friends: randInt(70),
+          ratings: randInt(70)
         };
         break;
       case 'reviews':
         data = {
-          rating: Math.floor(Math.random() * 6),
-          date: faker.date.past().toJSON().slice(0, 10),
+          rating: randInt(5, 1),
+          date: dateFormatter(faker.date.past().toJSON().slice(0, 10)),
           review: faker.lorem.paragraph().slice(0, 200),
-          user_id: Math.floor(Math.random() * 51),
-          item_id: Math.floor(Math.random() * 501)
+          user_id: randInt(51),
+          item_id: randInt(501)
         };
         break;
     }
