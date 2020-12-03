@@ -1,9 +1,16 @@
 import React from 'react';
 import Review from './review.jsx';
 
+const headerStyle = {
+  fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
+  fontSize: 16,
+  fontWeight: 700
+};
+
 const Reviews = ({ reviews }) => {
   return (
-    <div style={{overflow: 'auto', height: '71%'}}>
+    <div style={{overflow: 'auto', height: '68%'}}>
+      <p style={headerStyle}>{`Reviews(${reviews.length})`}</p>
       {
         reviews &&
         reviews.map((review, index) => {

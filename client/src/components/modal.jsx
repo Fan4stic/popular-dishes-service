@@ -33,6 +33,16 @@ const modalStyle = {
   overflow: 'hidden'
 };
 
+const modalBannerStyle = {
+  position: 'absolute',
+  color: '#fff',
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  fontFamily: 'Poppins,Helvetica Neue,Helvetica,Arial,sans-serif',
+  fontSize: 12,
+  fontWeight: 300,
+  marginLeft: 30
+};
+
 const titleStyle = {
   fontSize: 28,
   fontWeight: 900,
@@ -46,7 +56,14 @@ const priceStyle = {
   fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
   fontWeight: 900,
   fontSize: 14,
-  marginBottom: 50
+  marginBottom: 20
+};
+
+const descriptionStyle = {
+  fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
+  fontWeight: 900,
+  fontSize: 14,
+  height: 34
 };
 
 const closeStyle = {
@@ -71,12 +88,14 @@ const Modal = ({ shown, toggle, data, dish }) => {
       <div id="modal" style={modalBackgroundStyle}>
           <span style={closeStyle} onClick={() => {toggle()}}>&times;</span>
           <div style={modalStyle}>
-            <div style={{backgroundColor: 'black', display: 'flex'}}>
+            <div style={{position: 'relative', backgroundColor: 'black', display: 'flex'}}>
+              {/* <div style={modalBannerStyle}>{`1 of ${dish.num_pics} ${dish.name}`}</div> */}
               <img style={{objectFit: 'contain', flexGrow: 1, minWidth: 0}} src={dish.picture}/>
             </div>
             <div style={{marginLeft: 20, marginRight: 20, width: 350, height: '100%'}}>
               <p style={titleStyle}>{dish.name}</p>
               <p style={priceStyle}>{`$${dish.price}.00`}</p>
+              <p style={descriptionStyle}>{dish.description}</p>
               <Reviews reviews={dish.reviews}/>
               <img style={menuButtonStyle} src={menuButtonURL}></img>
             </div>

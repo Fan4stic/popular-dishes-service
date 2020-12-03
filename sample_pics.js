@@ -1,5 +1,4 @@
 module.exports = [
-  'https://hackreactorpics.s3-us-west-1.amazonaws.com/avocado-toast.jpg',
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/bacon-and-eggs-breakfast.jpg',
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/beef.jpg',
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/chinesefood.jpg',
@@ -14,5 +13,9 @@ module.exports = [
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/sushi.jpg',
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/tacos.jpg',
   'https://hackreactorpics.s3-us-west-1.amazonaws.com/waffles-for-breakfast.jpg',
-  'https://hackreactorpics.s3-us-west-1.amazonaws.com/wokdish.jpg'
+  'https://hackreactorpics.s3-us-west-1.amazonaws.com/wokdish.jpg',
+  'https://hackreactorpics.s3-us-west-1.amazonaws.com/a-hot-bowl-of-soup-on-a-table-top.jpg',
+  'https://hackreactorpics.s3-us-west-1.amazonaws.com/berry-cheesecake.jpg',
+  'https://hackreactorpics.s3-us-west-1.amazonaws.com/moroccan-meal-in-tagine.jpg',
+  'https://hackreactorpics.s3-us-west-1.amazonaws.com/plated-smoked-salmon.jpg'
 ];

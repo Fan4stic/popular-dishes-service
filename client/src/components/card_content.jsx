@@ -52,7 +52,7 @@ const CardContent = ({ image, name, reviews, dish, changeDish }) => {
       <img src={image} style={imgStyle}></img>
       <div style={{paddingLeft: 16, paddingRight: 16}}>
         <p style={nameStyle}>{name}</p>
-        <p style={reviewsStyle}>{`${Math.floor(Math.random() * 50) + 1} Photos · ${reviews} Reviews`}</p>
+        <p style={reviewsStyle}>{`${dish.num_pics} Photos · ${reviews} Reviews`}</p>
       </div>
       <div style={priceDivStyle}>
         <span style={priceStyle}>{`$${dish.price}.00`}</span>

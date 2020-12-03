@@ -28,10 +28,12 @@ class PopularDishes extends React.Component {
   }
 
   toggleModal() {
+    document.body.classList.remove('hiddenScroll');
     this.setState({modalShown: !this.state.modalShown});
   }
 
   setCurrentDish(dish) {
+    document.body.classList.add('hiddenScroll');
     this.setState({currentDish: dish, modalShown: true});
   }
 

@@ -14,6 +14,8 @@ CREATE TABLE items (
   name VARCHAR(50),
   picture VARCHAR(300),
   price int,
+  num_pics int,
+  description VARCHAR(200),
   restaurant_id int(16),
   PRIMARY KEY (id),
   FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)

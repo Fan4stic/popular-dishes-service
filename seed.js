@@ -31,6 +31,8 @@ const generateEntries = async function(N, table) {
           name: capitalizeFirstLetter(faker.lorem.word()),
           picture: samplePics[randInt(samplePics.length)],
           price: randInt(20, 5),
+          num_pics: Math.floor(Math.random() * 50) + 1,
+          description: faker.lorem.sentence(),
           restaurant_id: randInt(51)
         };
         break;
@@ -62,7 +64,7 @@ generateEntries(50, 'restaurants').then(
 ).then(
   success => generateEntries(500, 'items')
 ).then(
-  success => generateEntries(2000, 'reviews')
+  success => generateEntries(4000, 'reviews')
 ).then(
   success => Api.db.end()
 );
