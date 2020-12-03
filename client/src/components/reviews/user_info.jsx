@@ -17,7 +17,12 @@ const avatarStyle = {
   overflow: 'hidden'
 };
 
-const nameStyle = {fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif", fontWeight: 700, fontSize: 16, color: '#2b273c'};
+const nameStyle = {
+  fontFamily: "Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif",
+  fontWeight: 700,
+  fontSize: 16,
+  color: '#2b273c'
+};
 
 const dataStyle = {
   display: 'grid',

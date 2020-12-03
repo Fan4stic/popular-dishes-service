@@ -26,10 +26,8 @@ const reviewsStyle = {
 
 const priceStyle = {
   textAlign: 'right',
-  position: 'relative',
-  left: 130,
-  bottom: 90,
   padding: '3px 6px',
+  marginRight: 5,
   borderRadius: 4,
   backgroundColor: 'rgba(51,51,51,.75)',
   color: '#fff',
@@ -39,15 +37,26 @@ const priceStyle = {
   zIndex: 499
 };
 
+const priceDivStyle = {
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'row-reverse',
+  left: 0,
+  bottom: 94,
+  zIndex: 499
+};
+
 const CardContent = ({ image, name, reviews, dish, changeDish }) => {
   return (
     <div style={{position: 'relative'}} onClick={() => {changeDish(dish)}}>
       <img src={image} style={imgStyle}></img>
-      <div style={{"padding-left": 16, "padding-right": 16}}>
+      <div style={{paddingLeft: 16, paddingRight: 16}}>
         <p style={nameStyle}>{name}</p>
         <p style={reviewsStyle}>{`${Math.floor(Math.random() * 50) + 1} Photos · ${reviews} Reviews`}</p>
       </div>
-      <span style={priceStyle}>{`$${dish.price}.00`}</span>
+      <div style={priceDivStyle}>
+        <span style={priceStyle}>{`$${dish.price}.00`}</span>
+      </div>
     </div>
   );
 };

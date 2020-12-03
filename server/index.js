@@ -17,7 +17,7 @@ app.get('/api/restaurants/:id/popular-items', async (req, res) => {
     // Get restaurant Id
     //const restaurantId = req.url.slice(31);
     const restaurantId = req.params.id;
-    // Define big query
+
     const bigQuery = `
     SET SESSION group_concat_max_len = 100000;
     SELECT a.* FROM (SELECT i.*, CONCAT(
@@ -40,7 +40,8 @@ app.get('/api/restaurants/:id/popular-items', async (req, res) => {
     JOIN reviews r on r.item_id=i.id
     JOIN users u on u.id=r.user_id
     WHERE i.restaurant_id=${restaurantId}
-    GROUP BY i.id) a ORDER BY a.num_stars DESC LIMIT 10;`;
+    GROUP BY i.id) a ORDER BY a.num_stars DESC LIMIT 10;
+    `;
 
     const data = (await db.customQuery(bigQuery))[1].map(itemData => {
       return {...itemData, reviews: JSON.parse(itemData.reviews)};

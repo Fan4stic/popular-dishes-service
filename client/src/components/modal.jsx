@@ -6,7 +6,7 @@ const sampleReviews = require('../sample_data/sample_reviews.js');
 const menuButtonURL = 'https://hackreactorpics.s3-us-west-1.amazonaws.com/Screen+Shot+2020-11-27+at+6.34.17+PM.png';
 
 const modalBackgroundStyle = {
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
   zIndex: 998,
@@ -37,10 +37,20 @@ const titleStyle = {
   fontSize: 28,
   fontWeight: 900,
   fontFamily: 'Poppins,Helvetica Neue,Helvetica,Arial,sans-serif',
-  color: '#2b273c'
+  color: '#2b273c',
+  marginBottom: 10,
+  marginTop: 10
+};
+
+const priceStyle = {
+  fontFamily: 'Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif',
+  fontWeight: 900,
+  fontSize: 14,
+  marginBottom: 50
 };
 
 const closeStyle = {
+  cursor: 'pointer',
   right: 80,
   top: 0,
   position: 'absolute',
@@ -66,6 +76,7 @@ const Modal = ({ shown, toggle, data, dish }) => {
             </div>
             <div style={{marginLeft: 20, marginRight: 20, width: 350, height: '100%'}}>
               <p style={titleStyle}>{dish.name}</p>
+              <p style={priceStyle}>{`$${dish.price}.00`}</p>
               <Reviews reviews={dish.reviews}/>
               <img style={menuButtonStyle} src={menuButtonURL}></img>
             </div>

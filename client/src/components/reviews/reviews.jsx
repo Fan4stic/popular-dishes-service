@@ -3,7 +3,7 @@ import Review from './review.jsx';
 
 const Reviews = ({ reviews }) => {
   return (
-    <div style={{overflow: 'auto', height: '75%'}}>
+    <div style={{overflow: 'auto', height: '71%'}}>
       {
         reviews &&
         reviews.map((review, index) => {
